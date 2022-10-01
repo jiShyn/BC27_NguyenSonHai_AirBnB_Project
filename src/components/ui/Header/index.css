@@ -1,7 +1,20 @@
 .text-white-scss {
-	color: white
+   color: white;
 }
 
 .text-center-scss {
-	text-align: center;
+   text-align: center;
+}
+
+.ant-layout-header {
+   height: fit-content;
+}
+
+.ant-layout-header .ant-col-14 {
+   text-align: center;
+}
+
+
+.ant-layout-header .dropdown-toggle::after {
+   display: none;
 }

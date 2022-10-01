@@ -12,3 +12,13 @@
 .footer .ant-divider-horizontal.ant-divider-with-text::after {
    border: initial;
 }
+
+.footer .ant-list-item {
+   justify-content: flex-start;
+}
+
+.footer .text-dark.link:hover {
+   opacity: 0.8;
+}
+
+

@@ -1,12 +1,18 @@
 .ant-form {
+	padding-left: 40px;
+	padding-right: 40px;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	/* align-items: center; */
 }
-.ant-form-item {
+.form-login .ant-form-item {
 	margin-bottom: 44px;
+}
+
+.form-register .ant-form-item {
+	margin-bottom: 24px;
 }
 
 .ant-form-item-control-input-content {

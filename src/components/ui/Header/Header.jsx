@@ -3,11 +3,11 @@ import { MdLanguage } from "react-icons/md";
 import { VscThreeBars } from "react-icons/vsc";
 import { FaUserCircle } from "react-icons/fa";
 import React from "react";
-import "../index.css";
+import "./index.css";
+import SearchHeader from "./components/SearchHeader";
 
 const Header = () => {
    return (
-      // <nav className="">
       <div className="container-fluid">
          <Row align="middle" justify="space-between">
             <Col span={5}>
@@ -39,7 +39,7 @@ const Header = () => {
                </a>
             </Col>
 
-            <Col span={5}>
+            <Col span={5} className="text-end">
                <a href="#" className="text-white">
                   Đón tiếp khách
                </a>
@@ -62,12 +62,12 @@ const Header = () => {
                   </button>
                   <ul className="dropdown-menu">
                      <li>
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item" href="/register">
                            Đăng ký
                         </a>
                      </li>
                      <li>
-                        <a className="dropdown-item" href="#">
+                        <a className="dropdown-item" href="/login">
                            Đăng nhập
                         </a>
                      </li>
@@ -92,48 +92,9 @@ const Header = () => {
             </Col>
          </Row>
 
-         {/* <button
-               className="navbar-toggler"
-               type="button"
-               data-bs-toggle="collapse"
-               data-bs-target="#navbarSupportedContent"
-               aria-controls="navbarSupportedContent"
-               aria-expanded="false"
-               aria-label="Toggle navigation"
-            >
-               <span className="navbar-toggler-icon text-white" />
-            </button> */}
-
-         {/* <div
-               className="collapse navbar-collapse"
-               id="navbarSupportedContent"
-            >
-               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                     <a
-                        className="nav-link text-white active"
-                        aria-current="page"
-                        href="#"
-                     >
-                        Nơi ở
-                     </a>
-                  </li>
-
-                  <li className="nav-item">
-                     <a className="nav-link text-white" href="#">
-                        Trải nghiệm
-                     </a>
-                  </li>
-
-                  <li className="nav-item">
-                     <a className="nav-link text-white" href="#">
-                        Trải nghiệm trực tuyến
-                     </a>
-                  </li>
-               </ul>
-            </div> */}
+         <SearchHeader/>
       </div>
-      // </nav>
+      
    );
 };
 

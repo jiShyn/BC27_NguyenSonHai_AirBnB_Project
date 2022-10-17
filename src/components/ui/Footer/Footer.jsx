@@ -8,7 +8,7 @@ import {
 import { MdOutlineLanguage } from "react-icons/md";
 import { IoLogoUsd } from "react-icons/io";
 import { FaFacebookF } from "react-icons/fa";
-import "../index.css";
+import "./index.css";
 const { Option } = Select;
 
 const data1 = [
@@ -202,12 +202,10 @@ const Footer = () => {
                         <span className="ms-3">
                            <IoLogoUsd />
                         </span>
-                        <span className="ms-1 me-5">
+                        <span className="ms-1 me-5 currency">
                            <Select
                               defaultValue="VND"
-                              style={{
-                                 width: 120,
-                              }}
+                              size="middle"
                               // onChange={handleChange}
                            >
                               <Option value="vie">VND</Option>

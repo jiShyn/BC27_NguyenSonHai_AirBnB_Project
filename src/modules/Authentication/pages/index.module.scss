@@ -1,0 +1,33 @@
+.loginLeftBg {
+	min-height: 100vh;
+	background-image: url("../../../assets/images/wallpaperflare.com_wallpaper.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.loginColRight {
+	background-color: antiquewhite;
+}
+
+.ant-form {
+	padding-left: 40px;
+	padding-right: 40px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* align-items: center; */
+}
+.form-login .ant-form-item {
+	margin-bottom: 44px;
+}
+
+.form-register .ant-form-item {
+	margin-bottom: 24px;
+}
+
+.ant-form-item-control-input-content {
+	display: flex;
+	justify-content: space-between;
+}

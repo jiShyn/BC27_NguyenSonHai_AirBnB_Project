@@ -4,20 +4,10 @@ html {
 }
 body {
 	transition: all 0.5s;
+	min-height: 100vh;
 }
 
 a {
 	text-decoration: none;
 }
 
-.login-left-bg {
-	min-height: 100vh;
-	background-image: url("./images/wallpaperflare.com_wallpaper.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-}
-
-.login-col-right {
-	background-color: antiquewhite;
-}

@@ -1,9 +1,15 @@
 import React from 'react'
-import "./index.scss"
+import LocationPagination from '../components/LocationPagination'
+import SolidData from '../components/SolidData'
+
+import "./HomeStyle.scss"
 
 const Home = () => {
 	return (
-		<div className='test'>Home</div>
+		<div className='container'>
+			<LocationPagination/>
+			<SolidData/>
+		</div>
 	)
 }
 

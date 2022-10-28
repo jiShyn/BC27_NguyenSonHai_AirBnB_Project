@@ -1,11 +1,26 @@
-import { Button, Form, Input, notification } from "antd";
-import React from "react";
+import { Button, Form, Image, Input, notification, Modal } from "antd";
+import cn from "classnames";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineSearch } from "react-icons/ai";
 import locationAPI from "../../../../apis/locationAPI";
 import "./index.scss";
 
 const SearchHeader = () => {
+   const [locations, setLocations] = useState(null);
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+   const showModal = () => {
+      setIsModalOpen(true);
+   };
+
+   const handleOk = () => {
+      setIsModalOpen(false);
+   };
+   const handleCancel = () => {
+      setIsModalOpen(false);
+   };
+
    const { handleSubmit, register } = useForm({
       defaultValues: {
          searchValue: "",
@@ -16,6 +31,9 @@ const SearchHeader = () => {
       try {
          const data = await locationAPI.getLocations(value);
          console.log("data searchHeader", data);
+         setLocations(data);
+         showModal();
+         console.log("State locations", locations);
          return data;
       } catch (error) {
          // Đăng ký thất bại show error ra cho user thấy
@@ -34,18 +52,34 @@ const SearchHeader = () => {
       >
          <Form.Item className="search-item search-item-first rounded-pill">
             <div className="search-item-height fw-bold">Địa điểm</div>
-            {/* <Input
-               ref={{ ...register("searchValue") }}
-               placeholder="Bạn sắp đi đâu?"
-               bordered={false}
-               className="d-block ps-0"
-            /> */}
             <input
                className="d-block ps-0"
                type="text"
                {...register("searchValue")}
                placeholder="Bạn sắp đi đâu?"
             />
+
+            <Modal
+               open={isModalOpen}
+               onOk={handleOk}
+               onCancel={handleCancel}
+               className={cn(
+                  "response-location-api"
+                  // {
+                  //    "d-none": isModalOpen,
+                  // }
+               )}
+            >
+               {locations?.map((item, index) => {
+                  return (
+                     <div key={index} className="mb-2">
+                        <Image width={50} src={item.hinhAnh} />
+                        <span className="mx-2">{item.tenViTri}</span>
+                        <span>{item.tinhThanh}</span>
+                     </div>
+                  );
+               })}
+            </Modal>
          </Form.Item>
 
          <div className="search-item search-item-common rounded-pill">

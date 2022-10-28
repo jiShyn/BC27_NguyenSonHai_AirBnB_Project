@@ -3,7 +3,8 @@ import { MdLanguage } from "react-icons/md";
 import { VscThreeBars } from "react-icons/vsc";
 import { FaUserCircle } from "react-icons/fa";
 import React from "react";
-import "./index.css";
+
+import "./index.scss";
 import SearchHeader from "./components/SearchHeader";
 
 const Header = () => {

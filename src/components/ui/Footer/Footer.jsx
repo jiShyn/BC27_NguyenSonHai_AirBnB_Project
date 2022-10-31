@@ -8,7 +8,7 @@ import {
 import { MdOutlineLanguage } from "react-icons/md";
 import { IoLogoUsd } from "react-icons/io";
 import { FaFacebookF } from "react-icons/fa";
-import "./index.css";
+import "./FooterStyles.scss";
 const { Option } = Select;
 
 const data1 = [

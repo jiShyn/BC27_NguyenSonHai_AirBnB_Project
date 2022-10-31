@@ -2,12 +2,13 @@ import { Col, Row } from "antd";
 import { MdLanguage } from "react-icons/md";
 import { VscThreeBars } from "react-icons/vsc";
 import { FaUserCircle } from "react-icons/fa";
-import React from "react";
 
-import "./index.scss";
+import "./HeaderStyles.scss";
 import SearchHeader from "./components/SearchHeader";
 
 const Header = () => {
+ 
+
    return (
       <div className="container-fluid">
          <Row align="middle" justify="space-between">
@@ -85,7 +86,7 @@ const Header = () => {
                      </li>
                      <li>
                         <a className="dropdown-item" href="#">
-                        Trợ giúp
+                           Trợ giúp
                         </a>
                      </li>
                   </ul>
@@ -93,9 +94,8 @@ const Header = () => {
             </Col>
          </Row>
 
-         <SearchHeader/>
+         <SearchHeader />
       </div>
-      
    );
 };
 

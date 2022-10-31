@@ -3,8 +3,9 @@ import cn from "classnames";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineSearch } from "react-icons/ai";
+
 import locationAPI from "../../../../apis/locationAPI";
-import "./index.scss";
+import "./SearchHeaderStyles.scss";
 
 const SearchHeader = () => {
    const [locations, setLocations] = useState(null);

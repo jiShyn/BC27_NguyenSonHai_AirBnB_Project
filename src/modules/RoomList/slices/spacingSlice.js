@@ -9,7 +9,6 @@ const spacingSlice = createSlice({
    initialState,
    reducers: {
       getHeightHeader: (state, { payload }) => {
-         console.log("payload", payload);
          state.heightHeader = payload;
          console.log("heightHeader slices", state.heightHeader);
       },

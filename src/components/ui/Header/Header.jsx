@@ -1,19 +1,28 @@
 import { Col, Row } from "antd";
+import { useLocation, useParams } from "react-router-dom";
 import { MdLanguage } from "react-icons/md";
 import { VscThreeBars } from "react-icons/vsc";
 import { FaUserCircle } from "react-icons/fa";
 
 import "./HeaderStyles.scss";
 import SearchHeader from "./components/SearchHeader";
+import { useEffect, useState } from "react";
+import SubNav from "../../../modules/RoomList/components/SubNav/SubNav";
 
 const Header = () => {
- 
+   const { pathname } = useLocation();
+   const { id } = useParams();
+   const [isRoomListUrl, setIsRoomListUrl] = useState(false);
+
+   useEffect(() => {
+      setIsRoomListUrl(pathname.includes("/room-list"));
+   }, [pathname]);
 
    return (
       <div className="container-fluid">
          <Row align="middle" justify="space-between">
             <Col span={5}>
-               <a href="#" className="navbar-brand">
+               <a href="/" className="navbar-brand">
                   <div className="text-white">
                      <svg width="102" height="32">
                         <path
@@ -29,17 +38,23 @@ const Header = () => {
                </a>
             </Col>
 
-            <Col span={14}>
-               <a href="#" className="me-2 me-md-4 text-white">
-                  Nơi ở
-               </a>
-               <a href="#" className="me-2 me-md-4 text-white">
-                  Trải nghiệm
-               </a>
-               <a href="#" className="text-white">
-                  Trải nghiệm thực tế
-               </a>
-            </Col>
+            {isRoomListUrl ? (
+               <Col span={14}>
+                  <SubNav />
+               </Col>
+            ) : (
+               <Col span={14}>
+                  <a href="#" className="me-2 me-md-4 text-white">
+                     Nơi ở
+                  </a>
+                  <a href="#" className="me-2 me-md-4 text-white">
+                     Trải nghiệm
+                  </a>
+                  <a href="#" className="text-white">
+                     Trải nghiệm thực tế
+                  </a>
+               </Col>
+            )}
 
             <Col span={5} className="text-end">
                <a href="#" className="text-white">
@@ -94,7 +109,7 @@ const Header = () => {
             </Col>
          </Row>
 
-         <SearchHeader />
+         {isRoomListUrl || <SearchHeader />}
       </div>
    );
 };

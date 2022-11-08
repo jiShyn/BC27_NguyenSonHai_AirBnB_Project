@@ -1,0 +1,35 @@
+p {
+   margin-bottom: 0;
+}
+.subnav {
+   .col-search-icon {
+      padding-left: 30px;
+
+
+
+      .wrapper-icon {
+         display: inline-block;
+         margin-left: 30%;
+         width: 50px;
+         height: 50px;
+         line-height: 50px;
+         text-align: center;
+
+         > svg {
+            transform: scale(2);
+            color: #fff;
+         }
+      }
+   }
+}
+
+.ant-picker.ant-picker-range {
+   padding: 10px 30px;
+   border-top-width: 0px;
+   border-bottom-width: 0px;
+
+   .ant-picker-input > input::placeholder {
+      opacity: 1;
+      color: #000;
+   }
+}

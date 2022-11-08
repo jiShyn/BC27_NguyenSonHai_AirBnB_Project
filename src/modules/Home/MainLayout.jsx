@@ -14,7 +14,6 @@ const MainLayout = () => {
 
    useLayoutEffect(() => {
       const heightHeaderCurrent = ref.current.clientHeight;
-      console.log("heightHeaderCurrent", heightHeaderCurrent);
       dispatch(getHeightHeader(heightHeaderCurrent));
    }, []);
 

@@ -1,7 +1,7 @@
 import { Button, Form, Image, Input, notification, Modal } from "antd";
-import cn from "classnames";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 
 import locationAPI from "../../../../apis/locationAPI";
@@ -18,6 +18,7 @@ const SearchHeader = () => {
    const handleOk = () => {
       setIsModalOpen(false);
    };
+
    const handleCancel = () => {
       setIsModalOpen(false);
    };
@@ -27,6 +28,7 @@ const SearchHeader = () => {
          searchValue: "",
       },
    });
+
    const onSubmit = async (value) => {
       console.log(value);
       try {
@@ -48,7 +50,7 @@ const SearchHeader = () => {
    return (
       <Form
          layout="horizontal"
-         className="search rounded-pill d-flex"
+         className={"search rounded-pill d-flex"}
          onFinish={handleSubmit(onSubmit)}
       >
          <Form.Item className="search-item search-item-first rounded-pill">
@@ -64,22 +66,21 @@ const SearchHeader = () => {
                open={isModalOpen}
                onOk={handleOk}
                onCancel={handleCancel}
-               className={cn(
-                  "response-location-api"
-                  // {
-                  //    "d-none": isModalOpen,
-                  // }
-               )}
+               className={"response-location-api"}
             >
-               {locations?.map((item, index) => {
-                  return (
-                     <div key={index} className="mb-2">
-                        <Image width={50} src={item.hinhAnh} />
-                        <span className="mx-2">{item.tenViTri}</span>
-                        <span>{item.tinhThanh}</span>
-                     </div>
-                  );
-               })}
+               <ul>
+                  {locations?.map((item, index) => {
+                     return (
+                        <li key={index} className="mb-2">
+                           <Image width={50} src={item.hinhAnh} />
+                           <Link to={`/room-list/${item.id}`}>
+                              <span className="mx-2">{item.tenViTri}</span>
+                              <span>{item.tinhThanh}</span>
+                           </Link>
+                        </li>
+                     );
+                  })}
+               </ul>
             </Modal>
          </Form.Item>
 

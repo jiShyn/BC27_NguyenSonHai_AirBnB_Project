@@ -1,0 +1,11 @@
+.room-list-location {
+   .room-title {
+      position: relative;
+      .icon-heart {
+         position: absolute;
+         top: 0;
+         right: 0;
+         transform: scale(1.5);
+      }
+   }
+}

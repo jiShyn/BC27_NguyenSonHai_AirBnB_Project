@@ -11,7 +11,6 @@ import SubNav from "../../../modules/RoomList/components/SubNav/SubNav";
 
 const Header = () => {
    const { pathname } = useLocation();
-   const { id } = useParams();
    const [isRoomListUrl, setIsRoomListUrl] = useState(false);
 
    useEffect(() => {
